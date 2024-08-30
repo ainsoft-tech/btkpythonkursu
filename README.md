@@ -1,1 +1,2 @@
-# btkpythonkursu
+# btk python kursu
+
