@@ -1,0 +1,18 @@
+Powershell ile git kurma
+winget search git
+winget install git.git
+-----------------------------
+
+git deposu bilgileri
+------------------------------------------------------------------------
+echo "# btkpythonkursu" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ainsoft-tech/btkpythonkursu.git
+git push -u origin main
+
+git remote add origin https://github.com/ainsoft-tech/btkpythonkursu.git
+git branch -M main
+git push -u origin main
