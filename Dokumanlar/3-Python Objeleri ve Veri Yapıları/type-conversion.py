@@ -15,7 +15,7 @@ y = 2.5             #float
 name = 'Çınar'      #str
 isOnline = True     #bool
 
-# print(type(x))
+# print(type(x))   'x değişkenin type türünü yazdırma.
 # print(type(y))
 # print(type(name))
 # print(type(isOnline))
@@ -24,7 +24,7 @@ isOnline = True     #bool
 
 # int to float
 
-# x = float(x)
+# x = float(x)   'x değişkeni int iken float 'a çevirdik
 # print(x)
 # print(type(x))
 
