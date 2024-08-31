@@ -1,3 +1,4 @@
+ls
 name = 'Sadık'
 surname = 'Turan'
 age = 36
