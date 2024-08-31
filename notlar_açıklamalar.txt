@@ -16,3 +16,6 @@ git push -u origin main
 git remote add origin https://github.com/ainsoft-tech/btkpythonkursu.git
 git branch -M main
 git push -u origin main
+
+//  matematiksel operatörler
+// +, -, *, /, ** üs, % mod, //tam bölme
