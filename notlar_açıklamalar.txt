@@ -18,4 +18,19 @@ git branch -M main
 git push -u origin main
 
 //  matematiksel operatörler
-// +, -, *, /, ** üs, % mod, //tam bölme
++, -, *, /, ** üs, % mod, //tam bölme
+
+// Karşılaştırma Operatörleri
+=  eşittir
+== eşit ise
+!= eşit değilse
+>= büyük eşit
+<= küçük eşit
+
+//Mantıksal operatörler
+and
+or
+not
+
+// is -> Identity operatörü (x is y)
+// in -> Membership operatörü (x in y)
