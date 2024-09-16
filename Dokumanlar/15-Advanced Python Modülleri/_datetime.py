@@ -47,3 +47,8 @@ print(simdi)
 result = simdi - timedelta(days = 10)
 
 print(result)
+
+simdi = datetime.today()
+result = datetime.strftime(simdi, '%d'+'.''%m' +'.''%Y  %H:%M:%S')
+
+print(result)

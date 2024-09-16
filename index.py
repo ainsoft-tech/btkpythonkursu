@@ -1,9 +1,6 @@
-x = int(input('x= '))
-y = int(input('y= '))
+import os
 
-if (x > y):
-    print('x y den büyüktür')
-elif (x == y ):
-    print ('x ve y birbirine eşittir')
-else:
-    print('y x ten büyüktür')
+result = os.path.abspath("_os.py")
+result = os.path.dirname("C:/Users/ainsoft/Desktop/btkpython")
+
+print(result)
