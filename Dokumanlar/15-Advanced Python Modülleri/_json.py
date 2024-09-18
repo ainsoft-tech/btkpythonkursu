@@ -21,8 +21,8 @@ person_dict = {"name": "Ali","languages": ["Python","C#"] }
 # with open("person.json","w") as f:
 #     json.dump(person_dict, f)
 
-# person_dict = json.loads(person_string)
+person_dict = json.loads(person_string)
 
-# result = json.dumps(person_dict, indent= 4, sort_keys= True)
-# print(person_dict)
-# print(result)
+result = json.dumps(person_dict, indent= 4, sort_keys= True)
+print(person_dict)
+print(result)

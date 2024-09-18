@@ -9,10 +9,14 @@ import requests
 class theMovieDb:
     def __init__(self):
         self.api_url = "https://api.themoviedb.org/3"
-        self.api_key = "<api_key>"
+        self.api_key = "334e0070085a4db757f17771d2bf8bfa"
 
     def getPopulars(self):
         response = requests.get(f"{self.api_url}/movie/popular?api_key={self.api_key}&language=en-US&page=1")
+        return response.json()
+
+    def getNowPlaying(self):
+        response = requests.get(f"{self.api_url}/movie/now_playing?api_key={self.api_key}&language=en-US&page=1")
         return response.json()
 
     def getSearchResults(self, keyword):
@@ -22,9 +26,9 @@ class theMovieDb:
 movieApi = theMovieDb()
 
 while True:
-    secim = input("1-Popular Movies\n2-Search Movies\n3-Exit\nSeçim: ")
+    secim = input("1-Popular Movies\n2-Search Movies\n3-Vizyondakiler\n4-Çıkış\nSeçim: ")
 
-    if secim == "3":
+    if secim == "4":
         break
     else:
         if secim == "1":
@@ -37,3 +41,8 @@ while True:
             movies = movieApi.getSearchResults(keyword)
             for movie in movies['results']:
                 print(movie['name'])
+
+        if secim == "3":
+            movies = movieApi.getNowPlaying()
+            for movie in movies['results']:
+                print(movie['title'])

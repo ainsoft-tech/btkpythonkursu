@@ -48,7 +48,7 @@ str = "Python Kursu: Python Programlama Rehberiniz | 40 saat"
 
          [^abc] => abc dışındaki karakterler.
          [^0-9] => rakam olmayan karakterler.
-
+mail adresi olup olmadığını kontrol için de kullanılır.
 """
 
 result = re.findall("[abc]",str)
