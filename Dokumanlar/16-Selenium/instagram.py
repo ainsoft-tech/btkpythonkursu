@@ -1,5 +1,6 @@
 from instagramUserInfo import username, password
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
@@ -26,7 +27,7 @@ class Instagram:
     def getFollowers(self, max):
         self.browser.get(f"https://www.instagram.com/{self.username}")
         time.sleep(2)
-        self.browser.find_element_by_xpath("//*[@id='react-root']/section/main/div/header/section/ul/li[2]/a").click()
+        self.browser.find_element(By.XPATH, "//*[@id='react-root']/section/main/div/header/section/ul/li[2]/a").click()
         time.sleep(2)
         
         dialog = self.browser.find_element_by_css_selector("div[role=dialog] ul")
