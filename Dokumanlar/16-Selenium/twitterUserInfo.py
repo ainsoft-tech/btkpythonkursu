@@ -1,2 +1,2 @@
-username = "<kullanici adini gir>"
-password = "<parolanı gir>"
+username = "aliihsannasli"
+password = "12345678"
