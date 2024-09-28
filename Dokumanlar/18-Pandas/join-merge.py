@@ -21,7 +21,7 @@ import pandas as pd
 # result = pd.merge(df_customers,df_orders,how="inner")
 # result = pd.merge(df_customers,df_orders,how="left")
 # result = pd.merge(df_customers,df_orders,how="right")
-# result = pd.merge(df_customers,df_orders,how="outer")
+# result = pd.merge(df_customers,df_orders,how="outer") # Tüm kayıtlar
 
 customersA = {
     'CustomerId': [1,2,3,4],

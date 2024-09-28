@@ -2,7 +2,7 @@ import pandas as pd
 
 df = pd.read_csv("datasets/imdb.csv")
 
-# 1- Dosyada hakkındaki bilgiler.
+# 1- Dosya hakkındaki bilgiler.
 result = df
 result = df.columns
 result = df.info

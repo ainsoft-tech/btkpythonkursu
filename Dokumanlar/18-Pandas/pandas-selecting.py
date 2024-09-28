@@ -9,7 +9,7 @@ result = type(df["Column1"])
 result = df[["Column1","Column2"]]
 
 # loc["row","column"] => loc["row"] => loc[":","column"]
-result = df.loc["A"]
+result = df.loc["A"] #locate=loc sabiti
 result = type(df.loc["A"])
 result = df.iloc[2]
 result = df.loc[:,"Column1"]
