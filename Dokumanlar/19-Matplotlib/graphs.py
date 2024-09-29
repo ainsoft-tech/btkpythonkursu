@@ -35,8 +35,8 @@ colors = ['y','r','b']
 plt.pie(goals,labels=goal_types,colors=colors, shadow=True,explode=(0.05,0.05,0.05), autopct="%1.1f%%")
 plt.show()
 
+"""
 
-""" 
 """ 
 Bar Grafiği
 
