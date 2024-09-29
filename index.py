@@ -1,6 +1,11 @@
-import os
+import pandas as pd
 
-result = os.path.abspath("_os.py")
-result = os.path.dirname("C:/Users/ainsoft/Desktop/btkpython")
+df = pd.read_csv("Dokumanlar/18-Pandas/datasets/youtube-ing.csv")
 
-print(result)
+result = df.head(10)
+result = df[5:20].head(5)
+
+result = df.head(50)[["title", "likes", "dislikes"]]
+
+print (result)
+

@@ -15,11 +15,12 @@ def kareal(x):
 kareal2 = lambda x: x * x
 
 result = df
-result = df["Column2"].unique()
+result = df["Column2"].unique() # benzersiz elemanları bulmak için
 result = df["Column2"].nunique()
 result = df["Column2"].value_counts()
 result = df["Column1"] * 2
-result = df["Column1"].apply(kareal)
+result = df["Column1"].apply(kareal) # Bir fonksiyonu DataFrame'in eksenlerinden birine uygularls
+
 result = df["Column1"].apply(kareal2)
 result = df["Column1"].apply(lambda x: x * x)
 df["Column4"] = df["Column3"].apply(len)

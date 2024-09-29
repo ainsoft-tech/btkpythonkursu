@@ -13,7 +13,7 @@ class Twitter:
         self.password = password
     
     def singIn(self):
-        self.browser.get("https://twitter.com/login")
+        self.browser.get("https://x.com/login")
         time.sleep(2)
 
         usernameInput = self.browser.find_element(By.XPATH("//*[@id='page-container']/div/div[1]/form/fieldset/div[1]/input"))
