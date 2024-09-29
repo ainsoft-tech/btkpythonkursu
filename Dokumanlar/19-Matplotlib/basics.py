@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-""" Örnek 1 ***
+"""
+# Örnek 1 ***
 x = [1,2,3,4]
 y = [1,4,9,16]
 
@@ -14,7 +15,9 @@ plt.ylabel("y label")
 plt.show() 
 """
 
-""" Örnek 2 ***"""
+"""
+# Örnek 2 ***
+
 x = np.linspace(0,2,100)
 
 plt.plot(x, x, label="linear",color="red")
@@ -28,9 +31,10 @@ plt.title("simple plot")
 plt.legend()
 
 plt.show() 
+"""
 
-
-""" Örnek 3 ***
+""""
+# Örnek 3 ***
 x = np.linspace(0,2,100)
 fig,axs =  plt.subplots(3)
 
@@ -46,10 +50,10 @@ axs[2].set_title("cubic")
 plt.tight_layout()
 
 plt.show() 
-
 """
 
-""" Örnek 4 ***
+"""
+# Örnek 4 ***
 
 x = np.linspace(0,2,100)
 fig,axs =  plt.subplots(2,2)
@@ -63,15 +67,15 @@ axs[1,1].plot(x, x**4, color="yellow")
 plt.show() 
 """
 
-""" Örnek 5 ***
+
+# Örnek 5 ***
 import pandas as pd
 
 df = pd.read_csv("nba.csv")
 
 df = df.drop(["Number"], axis = 1).groupby("Team").mean()
 
-df.head().plot(subplots=True)
+df.head(5).plot(subplots=True)
 plt.legend()
 plt.show() 
 
-"""
