@@ -1,7 +1,7 @@
 import mysql.connector
 
 def insertProduct(name, price, imageUrl, description):
-    connection = mysql.connector.connect(host="localhost", user = "root", password="mysql1234", database="node_app")
+    connection = mysql.connector.connect(host="localhost", user = "root", password="mysql1234", database="node-app")
     cursor = connection.cursor()
 
     sql = "INSERT INTO Products(name,price,imageUrl,description) VALUES (%s,%s,%s,%s)"
@@ -20,7 +20,7 @@ def insertProduct(name, price, imageUrl, description):
         print('database bağlantısı kapandı.')
 
 def insertProducts(list):
-    connection = mysql.connector.connect(host="localhost", user = "root", password="mysql1234", database="node_app")
+    connection = mysql.connector.connect(host="localhost", user = "root", password="mysql1234", database="node-app")
     cursor = connection.cursor()
 
     sql = "INSERT INTO Products(name,price,imageUrl,description) VALUES (%s,%s,%s,%s)"
@@ -39,18 +39,23 @@ def insertProducts(list):
         print('database bağlantısı kapandı.')
 
 def getProducts():
-    connection = mysql.connector.connect(host="localhost", user = "root", password="mysql1234", database="node_app")
+    connection = mysql.connector.connect(host="localhost", user = "root", password="mysql1234", database="node-app")
     cursor = connection.cursor()
 
-    cursor.execute("Select * From Products")
+    cursor.execute("Select * From Products Order By name, price")
 
-    result = cursor.fetchall()
-
-    for product in result:
-        print(f'id: {product[0]} name: {product[1]} price: {product[2]}')
+    try:
+        result = cursor.fetchall()
+        for product in result:
+            print(f'id: {product[0]} name: {product[1]} price: {product[2]}')
+    except mysql.connector.Error as err:
+        print('hata:', err)
+    finally:
+        connection.close()
+        print('database bağlantısı kapandı.')
 
 def getProductById(id):
-    connection = mysql.connector.connect(host="localhost", user = "root", password="mysql1234", database="node_app")
+    connection = mysql.connector.connect(host="localhost", user = "root", password="mysql1234", database="node-app")
     cursor = connection.cursor()
 
     sql = "Select * From Products Where id=%s"
@@ -62,21 +67,22 @@ def getProductById(id):
 
     print(f'id: {result[0]} name: {result[1]} price: {result[2]}')
 
-def getProductInfo():
+def updateProduct(id, name, price):
     connection = mysql.connector.connect(host="localhost", user = "root", password="mysql1234", database="node-app")
     cursor = connection.cursor()
 
-    # sql = "Select COUNT(*) From Products where price>10000" # Toplam Kaydı sayar
-    # sql = "Select AVG(price) From Products" # Ortalamayı hesaplar
-    # sql = "Select SUM(price) From Products"
-    # sql = "Select MIN(price) From Products"
-    # sql = "Select MAX(price) From Products"
-    sql = "Select name,price From Products where price = (Select MAX(price) From Products)"
+    sql = "Update products Set name= %s, price= %s where id= %s"
+    values = (name, price, id)
+    cursor.execute(sql, values)
 
-    cursor.execute(sql)
+    try:
+        connection.commit()
+        print(f'{cursor.rowcount} tane kayıt güncellendi')
+    except mysql.connector.Error as err:
+        print('hata:', err)
+    finally:
+        connection.close()
+        print('database bağlantısı kapandı.')
 
-    result = cursor.fetchone()
-
-    print(f'Sonuç: {result[0]} {result[1]}')
-
-getProductInfo()
+updateProduct(1, 'Samsung S23 Ultra', 36000)
+getProducts()
