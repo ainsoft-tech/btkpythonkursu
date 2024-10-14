@@ -4,7 +4,7 @@ class Student:
             self.id = 0
         else:
             self.id = id
-        self.studentNumber = studentNumber      
+        self.studentNumber = studentNumber
         self.name = name
         self.surname = surname
         self.birthdate = birthdate

@@ -7,7 +7,7 @@ class App:
         self.db = DbManager()
 
     def initApp(self):
-        msg = "*****\n1-Öğrenci Listesi\n2-Öğrenci Ekle\n3-Öğrenci Güncelle\n4-Öğrenci Sil\n5-Öğretmen Ekle\n6-Sınıflara Göre Dersler\n7-Çıkış(E/Ç)"
+        msg = "*****\n1-Öğrenci Listesi\n2-Öğrenci Ekle\n3-Öğrenci Güncelle\n4-Öğrenci Sil\n5-Öğretmen Ekle\n6-Sınıflara Göre Dersler\n7-Çıkış(E/e)"
         while True:
             print(msg)
             islem = input("Seçim: ")
@@ -19,10 +19,10 @@ class App:
                 self.editStudent() 
             elif islem == '4':
                 self.deleteStudent() 
-            elif islem == 'E' or islem =='Ç':
+            elif islem == 'E' or islem =='e':
                 break
             else:
-                print('yanlış seçim')
+                print('Yanlış Seçim')
 
 
     def deleteStudent(self):
@@ -37,10 +37,10 @@ class App:
 
         student = self.db.getStudentById(studentid)
 
-        student[0].name = input('name:') or student[0].name
-        student[0].surname = input('surname:') or student[0].surname
-        student[0].gender = input('cinsiyet (E/K):') or student[0].gender
-        student[0].classid = input('sınıf: ') or student[0].classid
+        student[0].name = input('Name  :') or student[0].name
+        student[0].surname = input('Surname :') or student[0].surname
+        student[0].gender = input('Cinsiyet (E/K) :') or student[0].gender
+        student[0].classid = input('Sınıf : ') or student[0].classid
 
         year = input("yıl: ") or student[0].birthdate.year
         month = input("ay: ") or student[0].birthdate.month
@@ -53,15 +53,15 @@ class App:
     def addStudent(self):
         self.displayClasses()
         
-        classid = int(input('hangi sınıf: '))
-        number = input('numara: ')
-        name = input('ad')
-        surname = input('soyad')
-        year = int(input('yıl'))
-        month = int(input('ay'))
-        day = int(input('gün'))
+        classid = int(input('hangi sınıf : '))
+        number = input('numara : ')
+        name = input('Ad : ')
+        surname = input('Soyad : ')
+        year = int(input('Yıl : '))
+        month = int(input('Ay : '))
+        day = int(input('Gün : '))
         birthdate = datetime.date(year,month,day)
-        gender = input('cinsiyet (E/K)')
+        gender = input('Cinsiyet (E/K) : ')
 
         student = Student(None,number,name,surname,birthdate,gender,classid)
         self.db.addStudent(student)
@@ -73,7 +73,7 @@ class App:
 
     def displayStudents(self):       
         self.displayClasses()
-        classid = int(input('hangi sınıf: '))
+        classid = int(input('Hangi Sınıf: '))
 
         students = self.db.getStudentsByClassId(classid)
         print("Öğrenci Listesi")
@@ -81,9 +81,6 @@ class App:
             print(f'{std.id}-{std.name} {std.surname}')
 
         return classid
-
-    
-
 
 
 app = App()     
