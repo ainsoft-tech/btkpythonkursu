@@ -8,7 +8,7 @@ def window():
     win = QMainWindow()   
 
     win.setWindowTitle('First Application')
-    win.setGeometry(200,200,700,700)
+    win.setGeometry(200,200,1000,700)
     win.setWindowIcon(QIcon('icon.png'))
     win.setToolTip('my tooltip')
 

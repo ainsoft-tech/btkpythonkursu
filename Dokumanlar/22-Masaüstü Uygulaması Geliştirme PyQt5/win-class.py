@@ -22,9 +22,9 @@ class MyWindow(QMainWindow):
         self.lbl_surname.setText('Soyadınız: ')
         self.lbl_surname.move(50,70)
 
-        self.lbl_resut = QtWidgets.QLabel(self)
-        self.lbl_resut.resize(300,50)
-        self.lbl_resut.move(150,150)
+        self.lbl_result = QtWidgets.QLabel(self)
+        self.lbl_result.resize(300,50)
+        self.lbl_result.move(150,150)
 
         self.txt_name = QtWidgets.QLineEdit(self)
         self.txt_name.move(150, 30)
@@ -40,7 +40,7 @@ class MyWindow(QMainWindow):
         self.btn_save.clicked.connect(self.clicked)
 
     def clicked(self):
-        self.lbl_resut.setText('ad: '+ self.txt_name.text()+ ' soyad: '+ self.txt_surname.text())        
+        self.lbl_result.setText('ad: '+ self.txt_name.text()+ ' soyad: '+ self.txt_surname.text())
 
 def window():
     app = QApplication(sys.argv)
