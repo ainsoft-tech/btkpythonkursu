@@ -7,7 +7,7 @@ class MainForm(QMainWindow):
         super(MainForm, self).__init__()
 
         self.setWindowTitle('Calculator')
-        self.setGeometry(200,200,500,500)
+        self.setGeometry(700,200,500,500)
         self.initUI()
 
     def initUI(self):
@@ -30,28 +30,28 @@ class MainForm(QMainWindow):
         self.btn_topla = QtWidgets.QPushButton(self)
         self.btn_topla.setText('Toplama')
         self.btn_topla.move(150,130)
-        self.btn_topla.clicked.connect(self.hesapma)
+        self.btn_topla.clicked.connect(self.hesapla)
 
         self.btn_cikar = QtWidgets.QPushButton(self)
         self.btn_cikar.setText('Çıkarma')
         self.btn_cikar.move(150,170)
-        self.btn_cikar.clicked.connect(self.hesapma)
+        self.btn_cikar.clicked.connect(self.hesapla)
 
         self.btn_carpma = QtWidgets.QPushButton(self)
         self.btn_carpma.setText('Çarpma')
         self.btn_carpma.move(150,210)
-        self.btn_carpma.clicked.connect(self.hesapma)
+        self.btn_carpma.clicked.connect(self.hesapla)
 
         self.btn_bolme = QtWidgets.QPushButton(self)
         self.btn_bolme.setText('Bölme')
         self.btn_bolme.move(150,250)
-        self.btn_bolme.clicked.connect(self.hesapma)
+        self.btn_bolme.clicked.connect(self.hesapla)
 
         self.lbl_sonuc = QtWidgets.QLabel(self)
         self.lbl_sonuc.setText('sonuç: ')
         self.lbl_sonuc.move(150,290)
 
-    def hesapma(self):
+    def hesapla(self):
         sender = self.sender().text()
         result = 0
 
