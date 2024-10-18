@@ -9,8 +9,8 @@ class Window(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.ui.radioTurkiye.setChecked(True)
-        self.ui.radioLise.setChecked(True)
+        self.ui.radioTurkiye.setChecked(False)
+        self.ui.radioLise.setChecked(False)
 
         self.ui.radioTurkiye.toggled.connect(self.onClickedUlke)
         self.ui.radioAzerbaycan.toggled.connect(self.onClickedUlke)
