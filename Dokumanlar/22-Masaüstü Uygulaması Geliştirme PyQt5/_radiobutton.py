@@ -28,24 +28,24 @@ class Window(QtWidgets.QMainWindow):
     def onClickedUlke(self):
         rb = self.sender()
         if rb.isChecked():
-            print('seçilen ülke: '+ rb.text())
+            print('Seçilen Ülke : '+ rb.text())
 
     def onClickedEgitim(self):
         rb = self.sender()
         if rb.isChecked():
-            print('seçilen eğitim: '+ rb.text())
+            print('Eğitim Düzeyi : '+ rb.text())
 
     def getSelectedUlke(self):
         items = self.ui.groupBoxUlke.findChildren(QtWidgets.QRadioButton)
         for rb in items:
             if rb.isChecked():
-                self.ui.lblUlke.setText('seçilen ülke: '+ rb.text())
+                self.ui.lblUlke.setText('Seçilen Ülke : '+ rb.text())
 
     def getSelectedEgitim(self):
         items = self.ui.groupBoxEgitim.findChildren(QtWidgets.QRadioButton)
         for rb in items:
             if rb.isChecked():
-                self.ui.lblEgitim.setText('seçilen eğitim: '+ rb.text())
+                self.ui.lblEgitim.setText('Eğitim Düzeyi : '+ rb.text())
 
 app = QtWidgets.QApplication(sys.argv)
 win = Window()

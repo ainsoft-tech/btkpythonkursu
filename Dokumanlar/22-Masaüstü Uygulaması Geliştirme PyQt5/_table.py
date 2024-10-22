@@ -42,7 +42,7 @@ class Window(QtWidgets.QMainWindow):
         self.ui.tableProducts.setRowCount(len(products))
         self.ui.tableProducts.setColumnCount(2)
         self.ui.tableProducts.setHorizontalHeaderLabels(('Name','Price'))
-        self.ui.tableProducts.setColumnWidth(0,200)
+        self.ui.tableProducts.setColumnWidth(0,150)
         self.ui.tableProducts.setColumnWidth(1,100)
 
         rowIndex = 0

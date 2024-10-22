@@ -11,9 +11,9 @@ class Window(QtWidgets.QMainWindow):
 
         combo = self.ui.cbSehirler
 
-        # combo.addItem('Ankara')
-        # combo.addItem('İstanbul')
-        # combo.addItem('Kocaeli')
+        combo.addItem('Ankara')
+        combo.addItem('İstanbul')
+        combo.addItem('Kocaeli')
         # combo.addItems(['Adana','İzmir','Rize'])
 
         self.ui.btnLoadItems.clicked.connect(self.LoadItems)
