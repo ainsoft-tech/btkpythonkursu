@@ -34,3 +34,20 @@ not
 
 // is -> Identity operatörü (x is y)
 // in -> Membership operatörü (x in y)
+
+
+
+MYSQL--------
+// ikinci tablonun id'sini birinci tabloya foreign (ikincil) key yapmak
+alter table products
+Add CONSTRAINT fk_categories_products
+FOREIGN KEY (Categoryid) REFERENCES categories(id)
+
+
+
+Qt Designer
+
+Qt designer ile hazırladığımız ui uzantılı dosyayı
+pyuic5 MainWindow.ui -o MainWindow.py
+
+şeklinde py dosyasına dönüştürüyoruz.
